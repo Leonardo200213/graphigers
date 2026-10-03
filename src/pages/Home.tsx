@@ -2,9 +2,8 @@ import banner from '../assets/banner.png'
 
 export default function Home() {
     return (
-        <div>
-            <h1>Home Page</h1>
-            <img src={banner} alt="Banner" />
+        <div className="h-200">
+            <img src={banner} className="object-cover w-full h-full" />
         </div>
     )
 
