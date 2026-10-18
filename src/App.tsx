@@ -1,7 +1,8 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import Navbar from './components/Navbar.tsx'
-import Home from './pages/Home.tsx'
-import Servizi from './pages/Servizi.tsx'
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Navbar from "./components/Navbar.tsx";
+import Home from "./pages/Home.tsx";
+import Servizi from "./pages/Servizi.tsx";
+import Portfolio from "./pages/Portfolio.tsx";
 
 export default function App() {
   return (
@@ -11,9 +12,9 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/servizi" element={<Servizi />} />
-          <Route path="/portfolio" element={<Home />} />
+          <Route path="/portfolio" element={<Portfolio />} />
         </Routes>
       </div>
     </BrowserRouter>
-  )
+  );
 }
