@@ -11,8 +11,8 @@ export default function Home() {
         </div>
       </div>
       <div className="mx-auto max-w-5xl p-8 text-shadow-sm">
-        <h1 className="text-3xl font-bold text-white">Chi siamo</h1>
-        <div className="py-4 text-white text-justify">
+        <h1 className="text-3xl font-bold">Chi siamo</h1>
+        <div className="py-4 text-justify">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione
           officia repellendus asperiores ipsum in explicabo nulla rerum,
           consequuntur, ex illo tenetur doloribus voluptate! Nihil a fugiat aut

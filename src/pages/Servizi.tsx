@@ -36,9 +36,6 @@ export default function Servizi() {
             />
           ))}
         </div>
-        <button className="bg-purple-500 hover:bg-purple-700 text-white cursor-pointer font-bold py-3 px-6 text-lg rounded-4xl my-4 hover:scale-105 transition-transform duration-300 shadow-lg">
-          Scopri di più
-        </button>
       </div>
     </>
   );
