@@ -3,15 +3,23 @@ import aurora from "../assets/aurora.png";
 import giulia from "../assets/giulia.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { useState } from "react";
+import Info from "../components/Info.tsx";
 
 export default function Home() {
+  const [selected, setSelected] = useState<"aurora" | "giulia" | null>(null);
+
   return (
     <>
+      <Info selected={selected} setSelected={setSelected} />
       <div className="relative mx-auto">
         <img src={banner} className="object-contain block w-full h-full" />
 
         <div className="absolute inset-0 translate-x-[-6%]">
-          <button className="group absolute bottom-0 z-10 right-[10%] rounded-lg cursor-pointer">
+          <button
+            onClick={() => setSelected("aurora")}
+            className="group absolute bottom-0 z-10 right-[10%] rounded-lg cursor-pointer"
+          >
             <img
               src={aurora}
               className="drop-shadow-lg hover:scale-105 transition-all duration-200 hover:drop-shadow-2xl hover:brightness-103"
@@ -20,7 +28,10 @@ export default function Home() {
               Scopri Aurora <FontAwesomeIcon icon={faArrowRight} />
             </span>
           </button>
-          <button className="group absolute bottom-0 left-[25%] rounded-lg cursor-pointer">
+          <button
+            onClick={() => setSelected("giulia")}
+            className="group absolute bottom-0 left-[25%] rounded-lg cursor-pointer"
+          >
             <img
               src={giulia}
               className="drop-shadow-lg hover:scale-105 transition-all duration-200 hover:drop-shadow-2xl hover:brightness-103"
