@@ -1,11 +1,32 @@
+import auroramaker from "../assets/auroramaker.png";
+import giuliafoto from "../assets/giuliafoto.png";
+import { faXmark } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 interface InfoProps {
   selected: CharacterKey | null;
   setSelected: (open: CharacterKey | null) => void;
 }
 
 const characters = {
-  aurora: { nome: "Aurora", descrizione: "Descrizione di Aurora" },
-  giulia: { nome: "Giulia", descrizione: "Descrizione di Giulia" },
+  aurora: {
+    nome: "Aurora",
+    ruolo: "Videomaker",
+    foto: auroramaker,
+    descrizione: `"Aurora racconta storie attraverso il linguaggio del video, trasformando idee in contenuti autentici e coinvolgenti.
+    Dalla prima intuizione all'ultimo frame, cura ogni dettaglio per creare produzioni che emozionano e danno valore a ogni progetto.
+    Tra video, storytelling e strategie social, crea una comunicazione autentica che fa emergere l'identità dei brand e li connette alle persone."`,
+  },
+  giulia: {
+    nome: "Giulia",
+    ruolo: "Fotografa",
+    foto: giuliafoto,
+    descrizione: `"Giulia racconta storie attraverso la fotografia, catturando dettagli,
+     emozioni e autenticità in ogni scatto. Con uno sguardo creativo e sensibile, realizza immagini che valorizzano l'identità di persone
+      e brand, affiancando il suo lavoro con una gestione strategica dei social media per dare continuità e forza alla comunicazione.
+
+"`,
+  },
 };
 type CharacterKey = keyof typeof characters;
 
@@ -21,14 +42,34 @@ export default function Info({ selected, setSelected }: InfoProps) {
         setSelected(null)
       } /* cosi anche se si preme lo sfondo si chiude il riquadro */
     >
+      <div>
+        <button
+          className="absolute top-4 right-4 z-10 cursor-pointer hover:rotate-90 transition-transform ease-in-out"
+          onClick={() => setSelected(null)}
+        >
+          <FontAwesomeIcon icon={faXmark} className="text-3xl md:text-4xl" />
+        </button>
+      </div>
       {/* questo diventa lo sfondo */}
-      <div className="bg-white p-6 rounded-lg animate-[pop-in_0.2s_ease-out]">
-        {/* questo diventa il popup */}
-        <span className="text-2xl font-bold text-gray-800">
-          {characters[selected].nome}
-        </span>
-        <p className="text-gray-600 mt-2">{characters[selected].descrizione}</p>
-        <button onClick={() => setSelected(null)}>Close</button>
+      <div className="flex flex-col md:flex-row w-[80vw] max-w-5xl h-[70vh] md:h-[60vh] overflow-hidden bg-linear-to-br from-pink-400 to-orange-400 rounded-3xl animate-[pop-in_0.2s_ease-out]">
+        {/* questo div diventa il popup */}
+        <div className="flex-1 p-8 text-white vertical-align-middle flex flex-col justify-center">
+          <h2 className="text-4xl font-bold text-gray-800">
+            {characters[selected].nome}
+          </h2>
+          <h3 className="text-2xl font-bold text-gray-800 py-2">
+            {characters[selected].ruolo}
+          </h3>
+          <p className="text-black pt-4 text-justify">
+            {characters[selected].descrizione}
+          </p>
+        </div>
+        <div className="flex flex-1 justify-center p-4">
+          <img
+            className="w-full h-full object-cover rounded-3xl"
+            src={characters[selected].foto}
+          />
+        </div>
       </div>
     </div>
   );
