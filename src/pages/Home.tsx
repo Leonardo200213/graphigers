@@ -21,8 +21,9 @@ export default function Home() {
 
         <div className="group/coppia absolute inset-0 translate-x-[-6%]">
           <button
+            type="button"
             onClick={() => setSelected("aurora")}
-            className="group absolute bottom-0 right-[10%] z-10 rounded-lg cursor-pointer "
+            className="group absolute bottom-0 right-[10%] w-[43%] md:z-10 rounded-lg cursor-pointer "
           >
             <img
               src={aurora}
@@ -38,8 +39,9 @@ export default function Home() {
             </span>
           </button>
           <button
+            type="button"
             onClick={() => setSelected("giulia")}
-            className="group absolute bottom-0 left-[25%] z-0 rounded-lg cursor-pointer"
+            className="group absolute bottom-0 left-[25%] w-[30%] md:z-0 rounded-lg cursor-pointer"
           >
             <img
               src={giulia}
@@ -54,6 +56,20 @@ export default function Home() {
               />
             </span>
           </button>
+        </div>
+
+        <div className="flex justify-center gap-2 px-2 pt- md:hidden">
+          {(["giulia", "aurora"] as const).map((k) => (
+            <button
+              key={k}
+              type="button"
+              onClick={() => setSelected(k)}
+              className="flex items-center gap-2 rounded-full border border-white/30 bg-zinc-900/30 px-5 py-2.5 font-semibold text-white backdrop-blur-md active:scale-95"
+            >
+              Scopri {k === "giulia" ? "Giulia" : "Aurora"}
+              <FontAwesomeIcon icon={faArrowRight} />
+            </button>
+          ))}
         </div>
       </div>
       <div className="mx-auto max-w-5xl p-8">
