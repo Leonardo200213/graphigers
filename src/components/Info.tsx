@@ -51,16 +51,18 @@ export default function Info({ selected, setSelected }: InfoProps) {
         </button>
       </div>
       {/* questo diventa lo sfondo */}
-      <div className="flex flex-col md:flex-row w-[80vw] max-w-5xl h-[70vh] md:h-[60vh] overflow-hidden bg-linear-to-br from-pink-400 to-orange-400 rounded-3xl animate-[pop-in_0.2s_ease-out]">
+
+      <div
+        onClick={(e) => e.stopPropagation()}
+        className="flex h-[70vh] w-[80vw] max-w-5xl animate-[pop-in_0.2s_ease-out] flex-col overflow-hidden rounded-4xl border border-white/20 bg-zinc-900/40 backdrop-blur-md md:h-[60vh] md:flex-row"
+      >
         {/* questo div diventa il popup */}
-        <div className="flex-1 p-8 text-white vertical-align-middle flex flex-col justify-center">
-          <h2 className="text-4xl font-bold text-gray-800">
-            {characters[selected].nome}
-          </h2>
-          <h3 className="text-2xl font-bold text-gray-800 py-2">
+        <div className="flex flex-1 flex-col justify-center p-8 text-white vertical-align-middle">
+          <h2 className="text-4xl font-bold">{characters[selected].nome}</h2>
+          <h3 className="text-2xl font-bold py-2">
             {characters[selected].ruolo}
           </h3>
-          <p className="text-black pt-4 text-justify">
+          <p className="pt-4 text-justify">
             {characters[selected].descrizione}
           </p>
         </div>
@@ -68,6 +70,7 @@ export default function Info({ selected, setSelected }: InfoProps) {
           <img
             className="w-full h-full object-cover rounded-3xl"
             src={characters[selected].foto}
+            alt={characters[selected].nome}
           />
         </div>
       </div>

@@ -13,50 +13,67 @@ export default function Home() {
     <>
       <Info selected={selected} setSelected={setSelected} />
       <div className="relative mx-auto">
-        <img src={banner} className="object-contain block w-full h-full" />
+        <img
+          src={banner}
+          alt="Graphigers"
+          className="object-contain block w-full h-full"
+        />
 
-        <div className="absolute inset-0 translate-x-[-6%]">
+        <div className="group/coppia absolute inset-0 translate-x-[-6%]">
           <button
             onClick={() => setSelected("aurora")}
-            className="group absolute bottom-0 z-10 right-[10%] rounded-lg cursor-pointer"
+            className="group absolute bottom-0 right-[10%] z-10 rounded-lg cursor-pointer "
           >
             <img
               src={aurora}
-              className="drop-shadow-lg hover:scale-105 transition-all duration-200 hover:drop-shadow-2xl hover:brightness-103"
+              alt="Aurora"
+              className="transition-all duration-500 group-has-[button:hover]/coppia:brightness-75 group-hover:scale-105 group-hover:!brightness-105 group-hover:drop-shadow-[0_0_24px_rgba(255,105,150,0.6)]"
             />
-            <span className="pointer-events-none absolute left-1/2 bottom-[10%] -translate-x-1/2 text-[clamp(0.9rem,2.5vw,1.875rem)] font-bold text-white">
-              Scopri Aurora <FontAwesomeIcon icon={faArrowRight} />
+            <span className="whitespace-nowrap pointer-events-none absolute left-1/2 bottom-[10%] -translate-x-1/2 text-[clamp(0.9rem,2.5vw,1.875rem)] font-bold text-white">
+              Scopri Aurora{" "}
+              <FontAwesomeIcon
+                icon={faArrowRight}
+                className="transition-transform duration-500 group-hover:translate-x-2"
+              />
             </span>
           </button>
           <button
             onClick={() => setSelected("giulia")}
-            className="group absolute bottom-0 left-[25%] rounded-lg cursor-pointer"
+            className="group absolute bottom-0 left-[25%] z-0 rounded-lg cursor-pointer"
           >
             <img
               src={giulia}
-              className="drop-shadow-lg hover:scale-105 transition-all duration-200 hover:drop-shadow-2xl hover:brightness-103"
+              alt="Giulia"
+              className="transition-all duration-500 group-has-[button:hover]/coppia:brightness-75 group-hover:scale-105 group-hover:!brightness-105 group-hover:drop-shadow-[0_0_24px_rgba(255,105,150,0.6)]"
             />
-            <span className="pointer-events-none absolute left-[55%] bottom-[10%] -translate-x-1/2 text-[clamp(0.9rem,2.5vw,1.875rem)] font-bold text-white">
-              Scopri Giulia <FontAwesomeIcon icon={faArrowRight} />
+            <span className="whitespace-nowrap pointer-events-none absolute left-[55%] bottom-[10%] -translate-x-1/2 text-[clamp(0.9rem,2.5vw,1.875rem)] font-bold text-white">
+              Scopri Giulia{" "}
+              <FontAwesomeIcon
+                icon={faArrowRight}
+                className="transition-transform duration-500 group-hover:translate-x-2"
+              />
             </span>
           </button>
         </div>
       </div>
-      <div className="mx-auto max-w-5xl p-8 text-shadow-sm">
-        <h1 className="text-3xl font-bold">Chi siamo</h1>
-        <div className="py-4 text-justify">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione
-          officia repellendus asperiores ipsum in explicabo nulla rerum,
-          consequuntur, ex illo tenetur doloribus voluptate! Nihil a fugiat aut
-          accusamus architecto officia autem neque vel! Quia inventore provident
-          non laudantium magnam fuga delectus, optio assumenda. Accusamus natus
-          dolores possimus ipsa repudiandae repellat. Nostrum harum impedit
-          consectetur aliquid neque, asperiores id mollitia delectus praesentium
-          quibusdam deserunt repellat eum ex blanditiis cumque quos, molestias,
-          provident non. Soluta, consequatur quasi possimus non consectetur
-          nihil laudantium autem eius. Numquam minima similique quo hic in
-          dolorum sit a cum, vel nemo vero totam dolor nulla illum laboriosam?
-        </div>
+      <div className="mx-auto max-w-5xl p-8">
+        <section className="mx-auto my-8 max-w-5xl rounded-3xl border border-white/30 bg-gradient-to-br from-zinc-900/40 to-zinc-900/15 p-8 text-left text-white">
+          <h2 className="mb-4 text-3xl font-bold">Chi siamo</h2>
+          <p className="leading-relaxed py-4 text-left">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia
+            quas cum atque. Voluptatem voluptas voluptatibus asperiores!
+            Recusandae quas veniam, neque voluptatem minus quibusdam et nulla?
+            Voluptatum illo accusantium facere natus recusandae blanditiis odio
+            animi, reiciendis molestias. Officia, aperiam exercitationem!
+            Corporis enim ab rerum doloremque non id consequuntur, eum,
+            aspernatur vero quidem possimus obcaecati fugiat? Consequuntur,
+            culpa eius enim fugiat numquam fuga nobis ducimus cum accusamus
+            ullam quod ab, aliquid provident officiis nemo necessitatibus sequi
+            repellat laudantium odio. Rem nesciunt, est voluptatem qui porro nam
+            illum quos voluptatum cumque deserunt esse cum voluptatibus ab id
+            impedit neque dicta doloribus, fugit quidem.
+          </p>
+        </section>
       </div>
     </>
   );
