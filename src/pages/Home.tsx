@@ -76,18 +76,17 @@ export default function Home() {
         <section className="mx-auto my-8 max-w-5xl rounded-3xl border border-white/30 bg-gradient-to-br from-zinc-900/40 to-zinc-900/15 p-8 text-left text-white">
           <h2 className="mb-4 text-3xl font-bold">Chi siamo</h2>
           <p className="leading-relaxed py-4 text-left">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia
-            quas cum atque. Voluptatem voluptas voluptatibus asperiores!
-            Recusandae quas veniam, neque voluptatem minus quibusdam et nulla?
-            Voluptatum illo accusantium facere natus recusandae blanditiis odio
-            animi, reiciendis molestias. Officia, aperiam exercitationem!
-            Corporis enim ab rerum doloremque non id consequuntur, eum,
-            aspernatur vero quidem possimus obcaecati fugiat? Consequuntur,
-            culpa eius enim fugiat numquam fuga nobis ducimus cum accusamus
-            ullam quod ab, aliquid provident officiis nemo necessitatibus sequi
-            repellat laudantium odio. Rem nesciunt, est voluptatem qui porro nam
-            illum quos voluptatum cumque deserunt esse cum voluptatibus ab id
-            impedit neque dicta doloribus, fugit quidem.
+            Siamo un piccolo team creativo che aiuta aziende, professionisti e
+            realtà di ogni tipo a comunicare online in modo autentico e
+            riconoscibile.
+            <br />
+            Attraverso fotografie, video, gestione social e grafiche
+            personalizzate, creiamo contenuti studiati per valorizzare la tua
+            immagine e raccontare al meglio ciò che ti rende unico.
+            <br />
+            Giovani, creative e sempre aggiornate sulle nuove tendenze,
+            trasformiamo progetti e passioni in contenuti capaci di coinvolgere
+            e lasciare il segno.
           </p>
         </section>
       </div>

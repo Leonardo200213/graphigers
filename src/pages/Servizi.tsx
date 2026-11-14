@@ -22,8 +22,8 @@ export default function Servizi() {
   return (
     <>
       <div className="flex flex-col items-center">
-        <h1 className="text-3xl font-bold text-white text-shadow-sm text-center pt-16">
-          Cosa possiamo fare per te
+        <h1 className="text-2xl font-bold text-white text-shadow-sm text-center pt-12">
+          Ti accompagniamo nella creazione dei tuoi contenuti
         </h1>
 
         <div className="flex flex-wrap justify-center gap-4 pt-4">

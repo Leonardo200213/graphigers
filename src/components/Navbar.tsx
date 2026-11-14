@@ -3,7 +3,7 @@ import logoI from "../assets/instagramWhite.png";
 import testo from "../assets/logoBianco.png";
 import mail from "../assets/mail.png";
 import tel from "../assets/phone.png";
-import { useState } from "react";
+import { Fragment, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
@@ -31,21 +31,27 @@ export default function Navbar() {
           className="w-24 md:w-[8em] object-contain"
         />
 
-        <ul className="my-auto hidden w-fit justify-center gap-8 rounded-full border border-white/30 bg-gradient-to-br from-zinc-900/20 to-zinc-900/15 px-12 py-4 text-xl font-semibold text-white backdrop-blur-lg md:flex">
+        <ul className="my-auto hidden w-fit justify-center gap-4 rounded-full border border-white/30 bg-gradient-to-br from-zinc-900/20 to-zinc-900/15 px-4 py-4 text-xl font-semibold text-white backdrop-blur-lg md:flex">
           {links.map((l, i) => (
-            <li key={l.to} className="flex gap-8">
+            <Fragment key={l.to}>
               {i > 0 && (
-                <span aria-hidden="true" className="w-px bg-zinc-900/20" />
+                <li aria-hidden="true" className="mx-1 h-6 w-px bg-white/20" />
               )}
-              <NavLink
-                to={l.to}
-                className={({ isActive }) =>
-                  `nav-link ${isActive ? "active" : ""}`
-                }
-              >
-                {l.label}
-              </NavLink>
-            </li>
+              <li>
+                <NavLink
+                  to={l.to}
+                  className={({ isActive }) =>
+                    `relative block px-6 transition-opacity after:absolute after:inset-x-6 after:inset-y-7 after:bottom-0.5 after:h-0.5 after:origin-center after:rounded-full after:bg-white after:transition-transform after:duration-300 ${
+                      isActive
+                        ? "after:scale-x-120"
+                        : "opacity-80 after:scale-x-0 hover:opacity-100 hover:after:scale-x-100"
+                    }`
+                  }
+                >
+                  {l.label}
+                </NavLink>
+              </li>
+            </Fragment>
           ))}
         </ul>
 
@@ -54,7 +60,7 @@ export default function Navbar() {
             <button
               key={c.alt}
               type="button"
-              className="flex size-10 shrink-0 items-center justify-center rounded-full border border-white/30 bg-zinc-900/20 backdrop-blur-md md:size-14"
+              className="flex size-10 shrink-0 cursor-pointer items-center justify-center rounded-full border border-white/30 bg-zinc-900/20 backdrop-blur-md transition-all duration-300 hover:border-white/80 hover:bg-zinc-400/30 active:scale-105 md:size-14"
             >
               <img
                 src={c.src}
@@ -84,7 +90,11 @@ export default function Navbar() {
                 to={l.to}
                 onClick={() => setOpen(false)}
                 className={({ isActive }) =>
-                  `nav-link ${isActive ? "active" : ""}`
+                  `relative block px-6 transition-opacity after:absolute after:inset-x-6 after:inset-y-7 after:bottom-0.5 after:h-0.5 after:origin-center after:rounded-full after:bg-white after:transition-transform after:duration-300 ${
+                    isActive
+                      ? "after:scale-x-100"
+                      : "opacity-80 after:scale-x-0 hover:opacity-100 hover:after:scale-x-100"
+                  }`
                 }
               >
                 {l.label}
