@@ -13,19 +13,17 @@ const characters = {
     nome: "Aurora",
     ruolo: "Videomaker",
     foto: auroramaker,
-    descrizione: `"Aurora racconta storie attraverso il linguaggio del video, trasformando idee in contenuti autentici e coinvolgenti.
+    descrizione: `Aurora racconta storie attraverso il linguaggio del video, trasformando idee in contenuti autentici e coinvolgenti.
     Dalla prima intuizione all'ultimo frame, cura ogni dettaglio per creare produzioni che emozionano e danno valore a ogni progetto.
-    Tra video, storytelling e strategie social, crea una comunicazione autentica che fa emergere l'identità dei brand e li connette alle persone."`,
+    Tra video, storytelling e strategie social, crea una comunicazione autentica che fa emergere l'identità dei brand e li connette alle persone.`,
   },
   giulia: {
     nome: "Giulia",
     ruolo: "Fotografa",
     foto: giuliafoto,
-    descrizione: `"Giulia racconta storie attraverso la fotografia, catturando dettagli,
+    descrizione: `Giulia racconta storie attraverso la fotografia, catturando dettagli,
      emozioni e autenticità in ogni scatto. Con uno sguardo creativo e sensibile, realizza immagini che valorizzano l'identità di persone
-      e brand, affiancando il suo lavoro con una gestione strategica dei social media per dare continuità e forza alla comunicazione.
-
-"`,
+      e brand, affiancando il suo lavoro con una gestione strategica dei social media per dare continuità e forza alla comunicazione.`,
   },
 };
 type CharacterKey = keyof typeof characters;
